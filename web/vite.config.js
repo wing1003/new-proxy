@@ -29,6 +29,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@douyinfe/semi-ui/dist/css/semi.css': path.resolve(__dirname, './node_modules/@douyinfe/semi-ui/dist/css/semi.css'),
     },
   },
   plugins: [
@@ -69,7 +70,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-core': ['react', 'react-dom', 'react-router-dom'],
-          'semi-ui': ['@douyinfe/semi-icons', '@douyinfe/semi-ui'],
+          'semi-ui': ['@douyinfe/semi-icons', '@douyinfe/semi-ui', 'i18next', 'react-i18next', 'i18next-browser-languagedetector'],
           tools: ['axios', 'history', 'marked'],
           'react-components': [
             'react-dropzone',
@@ -77,11 +78,6 @@ export default defineConfig({
             'react-telegram-login',
             'react-toastify',
             'react-turnstile',
-          ],
-          i18n: [
-            'i18next',
-            'react-i18next',
-            'i18next-browser-languagedetector',
           ],
         },
       },
